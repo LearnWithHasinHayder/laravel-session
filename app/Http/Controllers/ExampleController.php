@@ -89,6 +89,17 @@ class ExampleController extends Controller
             'email' => 'required|email',
             'password'=> 'required|min:6|max:12|alpha_num',
             'password_confirmation' => 'required|same:password'
+        ], [
+            'name.required' => 'Please enter your name',
+            'name.min' => 'Name must be at least 3 characters',
+            'email.required' => 'Please enter your email',
+            'email.email' => 'Please enter a valid email',
+            'password.required' => 'Please enter a password',
+            'password.min' => 'Password must be at least 6 characters',
+            'password.max' => 'Password must not exceed 12 characters',
+            'password.alpha_num' => 'Password must be alphanumeric',
+            'password_confirmation.required' => 'Please confirm your password',
+            'password_confirmation.same' => 'Password and Confirm Password must match'
         ]);
 
         return response("Form Submitted Successfully");
